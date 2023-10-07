@@ -1,7 +1,7 @@
-﻿using KPI.NET_Labs.Variant13.NET3.Materials;
+﻿using DOTNET_Labs.Variant13.NET3.Materials;
 using System;
 
-namespace KPI.NET_Labs.Variant13.NET3
+namespace DOTNET_Labs.Variant13.NET3
 {
     class Lab3
     {
@@ -16,7 +16,7 @@ namespace KPI.NET_Labs.Variant13.NET3
 
         public void Var13_Lab3()
         {
-            Console.WriteLine("Variant 13\nVariant 3\n");
+            Console.WriteLine("Variant 13\nLab 3\n");
 
             MaterialFabric fabric = new MaterialFabric();
 

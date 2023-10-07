@@ -1,7 +1,7 @@
-﻿using KPI.NET_Labs.Variant13.NET5.Status;
+﻿using DOTNET_Labs.Variant13.NET5.Status;
 using System.Text;
 
-namespace KPI.NET_Labs.Variant13.NET5
+namespace DOTNET_Labs.Variant13.NET5
 {
     class Student : Person
     {

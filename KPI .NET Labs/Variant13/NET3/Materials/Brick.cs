@@ -1,4 +1,4 @@
-﻿namespace KPI.NET_Labs.Variant13.NET3.Materials
+﻿namespace DOTNET_Labs.Variant13.NET3.Materials
 {
     class Brick : Material
     {

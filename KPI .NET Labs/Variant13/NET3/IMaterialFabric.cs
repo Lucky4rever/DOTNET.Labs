@@ -1,6 +1,6 @@
-﻿using KPI.NET_Labs.Variant13.NET3.Materials;
+﻿using DOTNET_Labs.Variant13.NET3.Materials;
 
-namespace KPI.NET_Labs.Variant13.NET3
+namespace DOTNET_Labs.Variant13.NET3
 {
     interface IMaterialFabric
     {

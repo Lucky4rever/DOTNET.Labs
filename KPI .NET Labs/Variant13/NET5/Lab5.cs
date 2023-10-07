@@ -1,7 +1,7 @@
-﻿using KPI.NET_Labs.Variant13.NET5.Status;
+﻿using DOTNET_Labs.Variant13.NET5.Status;
 using System;
 
-namespace KPI.NET_Labs.Variant13.NET5
+namespace DOTNET_Labs.Variant13.NET5
 {
     class Lab5
     {
@@ -21,7 +21,7 @@ namespace KPI.NET_Labs.Variant13.NET5
 
         public void Var13_Lab5()
         {
-            Console.WriteLine("Variant 13\nVariant 5\n");
+            Console.WriteLine("Variant 13\nLab 5\n");
 
             StatusContext context = new StatusContext(new Issued());
 

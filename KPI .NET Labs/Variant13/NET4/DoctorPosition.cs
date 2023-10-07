@@ -1,4 +1,4 @@
-﻿namespace KPI.NET_Labs.Variant13.NET4
+﻿namespace DOTNET_Labs.Variant13.NET4
 {
     public enum DoctorPosition
     {

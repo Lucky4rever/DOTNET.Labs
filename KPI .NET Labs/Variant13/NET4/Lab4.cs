@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KPI.NET_Labs.Variant13.NET4
+namespace DOTNET_Labs.Variant13.NET4
 {
     class Lab4
     {
@@ -20,7 +20,7 @@ namespace KPI.NET_Labs.Variant13.NET4
 
         public void Var13_Lab4()
         {
-            Console.WriteLine("Variant 13\nVariant 4\n");
+            Console.WriteLine("Variant 13\nLab 4\n");
 
             RecipeFasade fasade = new RecipeFasade();
 

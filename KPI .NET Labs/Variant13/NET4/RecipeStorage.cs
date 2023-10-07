@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace KPI.NET_Labs.Variant13.NET4
+namespace DOTNET_Labs.Variant13.NET4
 {
     class RecipeStorage
     {

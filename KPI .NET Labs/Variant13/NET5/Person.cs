@@ -1,4 +1,4 @@
-﻿namespace KPI.NET_Labs.Variant13.NET5
+﻿namespace DOTNET_Labs.Variant13.NET5
 {
     abstract class Person
     {

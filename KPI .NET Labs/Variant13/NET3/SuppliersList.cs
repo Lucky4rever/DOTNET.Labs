@@ -1,9 +1,8 @@
-﻿using KPI.NET_Labs.Variant13.NET3.Materials;
-using System;
+﻿using DOTNET_Labs.Variant13.NET3.Materials;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KPI.NET_Labs.Variant13.NET3
+namespace DOTNET_Labs.Variant13.NET3
 {
     class SuppliersList
     {

@@ -52,7 +52,6 @@
     <Compile Include="Source\Status\StatusContext.cs" />
     <Compile Include="Source\Status\StatusFactory.cs" />
     <Compile Include="Source\Status\Submitted.cs" />
-    <Compile Include="Source\Status\TaskStatus.cs" />
     <Compile Include="Source\Status\TaskStatusAbstraction.cs" />
     <Compile Include="Source\Student.cs" />
     <Compile Include="Source\Task.cs" />

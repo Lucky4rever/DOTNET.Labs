@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KPI.NET_Labs.Variant13.NET5.Status
+﻿namespace DOTNET_Labs.Variant13.NET5.Status
 {
     class StatusContext
     {

@@ -1,4 +1,4 @@
-﻿namespace KPI.NET_Labs.Variant13.NET5.Status
+﻿namespace DOTNET_Labs.Variant13.NET5.Status
 {
     class StatusFactory
     {

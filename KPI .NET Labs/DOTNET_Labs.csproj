@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{085EFC63-625B-4E63-8D9B-C52CB3B335D7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>KPI.NET_Labs</RootNamespace>
-    <AssemblyName>KPI.NET_Labs</AssemblyName>
+    <RootNamespace>DOTNET_Labs</RootNamespace>
+    <AssemblyName>DOTNET_Labs</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -77,7 +77,6 @@
     <Compile Include="Variant13\NET5\Status\Incompleted.cs" />
     <Compile Include="Variant13\NET5\Status\Issued.cs" />
     <Compile Include="Variant13\NET5\Student.cs" />
-    <Compile Include="Variant13\NET5\Status\TaskStatus.cs" />
     <Compile Include="Variant13\NET5\Status\TaskStatusAbstraction.cs" />
     <Compile Include="Variant13\NET5\Task.cs" />
     <Compile Include="Variant13\NET5\Teacher.cs" />
