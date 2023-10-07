@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{085EFC63-625B-4E63-8D9B-C52CB3B335D7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>KPI.NET_Labs</RootNamespace>
+    <AssemblyName>KPI.NET_Labs</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Variant13\NET3\Construction.cs" />
+    <Compile Include="Variant13\NET3\IMaterialFabric.cs" />
+    <Compile Include="Variant13\NET3\RequiredItem.cs" />
+    <Compile Include="Variant13\NET3\Lab3.cs" />
+    <Compile Include="Variant13\NET3\MaterialFabric.cs" />
+    <Compile Include="Variant13\NET3\Materials\Brick.cs" />
+    <Compile Include="Variant13\NET3\Materials\BrickType.cs" />
+    <Compile Include="Variant13\NET3\Materials\Concrete.cs" />
+    <Compile Include="Variant13\NET3\Materials\Material.cs" />
+    <Compile Include="Variant13\NET3\Materials\ReinforcedConcreteSlabs.cs" />
+    <Compile Include="Variant13\NET3\Supplier.cs" />
+    <Compile Include="Variant13\NET3\SupplierListItem.cs" />
+    <Compile Include="Variant13\NET3\SuppliersList.cs" />
+    <Compile Include="Variant13\NET4\Doctor.cs" />
+    <Compile Include="Variant13\NET4\DoctorPosition.cs" />
+    <Compile Include="Variant13\NET4\Lab4.cs" />
+    <Compile Include="Variant13\NET4\Patient.cs" />
+    <Compile Include="Variant13\NET4\Recipe.cs" />
+    <Compile Include="Variant13\NET4\RecipeBuilder.cs" />
+    <Compile Include="Variant13\NET4\RecipeFasade.cs" />
+    <Compile Include="Variant13\NET4\RecipeStorage.cs" />
+    <Compile Include="Variant13\NET5\Lab5.cs" />
+    <Compile Include="Variant13\NET5\Person.cs" />
+    <Compile Include="Variant13\NET5\Status\Completed.cs" />
+    <Compile Include="Variant13\NET5\Status\StatusContext.cs" />
+    <Compile Include="Variant13\NET5\Status\StatusFactory.cs" />
+    <Compile Include="Variant13\NET5\Status\Submitted.cs" />
+    <Compile Include="Variant13\NET5\Status\Checked.cs" />
+    <Compile Include="Variant13\NET5\Status\NeedToResubmit.cs" />
+    <Compile Include="Variant13\NET5\Status\Incompleted.cs" />
+    <Compile Include="Variant13\NET5\Status\Issued.cs" />
+    <Compile Include="Variant13\NET5\Student.cs" />
+    <Compile Include="Variant13\NET5\Status\TaskStatus.cs" />
+    <Compile Include="Variant13\NET5\Status\TaskStatusAbstraction.cs" />
+    <Compile Include="Variant13\NET5\Task.cs" />
+    <Compile Include="Variant13\NET5\Teacher.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
