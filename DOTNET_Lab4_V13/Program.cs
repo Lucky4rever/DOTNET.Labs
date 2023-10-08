@@ -1,4 +1,5 @@
 ﻿using DOTNET_Lab4_V13.Source;
+using DOTNET_Lab4_V13.Source.Resourses;
 using System;
 
 namespace DOTNET_Lab4_V13

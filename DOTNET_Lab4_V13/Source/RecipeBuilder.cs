@@ -1,8 +1,9 @@
-﻿using System;
+﻿using DOTNET_Lab4_V13.Source.Interfaces;
+using System;
 
 namespace DOTNET_Lab4_V13.Source
 {
-    class RecipeBuilder
+    class RecipeBuilder : IRecipeBuilder
     {
         private readonly Recipe _recipe;
 
@@ -16,12 +17,12 @@ namespace DOTNET_Lab4_V13.Source
             this._recipe.Description = description;
         }
 
-        public void SetDoctor(Doctor doctor)
+        public void SetDoctor(IDoctor doctor)
         {
             this._recipe.Doctor = doctor;
         }
 
-        public void SetPatient(Patient patient)
+        public void SetPatient(IPerson patient)
         {
             this._recipe.Patient = patient;
         }

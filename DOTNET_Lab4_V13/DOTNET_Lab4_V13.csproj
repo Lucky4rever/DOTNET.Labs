@@ -44,7 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Source\Doctor.cs" />
-    <Compile Include="Source\DoctorPosition.cs" />
+    <Compile Include="Source\Interfaces\IDoctor.cs" />
+    <Compile Include="Source\Interfaces\IPerson.cs" />
+    <Compile Include="Source\Interfaces\IRecipe.cs" />
+    <Compile Include="Source\Interfaces\IRecipeBuilder.cs" />
+    <Compile Include="Source\Interfaces\IRecipeFasade.cs" />
+    <Compile Include="Source\Interfaces\IRecipeStorage.cs" />
+    <Compile Include="Source\Resources\DoctorPosition.cs" />
     <Compile Include="Source\Patient.cs" />
     <Compile Include="Source\Recipe.cs" />
     <Compile Include="Source\RecipeBuilder.cs" />
@@ -56,5 +62,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

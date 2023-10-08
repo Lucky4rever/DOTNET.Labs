@@ -1,13 +1,16 @@
-﻿namespace DOTNET_Lab4_V13.Source
+﻿using DOTNET_Lab4_V13.Source.Interfaces;
+
+namespace DOTNET_Lab4_V13.Source
 {
-    class Patient
+    class Patient : IPerson
     {
-        public string Name { get; private set; }
+        public string Name { get; }
 
         public Patient(string name)
         {
             this.Name = name;
         }
+
 
         public override string ToString()
         {

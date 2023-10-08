@@ -1,27 +1,28 @@
-﻿using System.Collections.Generic;
+﻿using DOTNET_Lab4_V13.Source.Interfaces;
+using System.Collections.Generic;
 
 namespace DOTNET_Lab4_V13.Source
 {
-    class RecipeStorage
+    class RecipeStorage : IRecipeStorage
     {
-        private readonly List<Recipe> _recipes;
+        private readonly List<IRecipe> _recipes;
 
         public RecipeStorage()
         {
-            this._recipes = new List<Recipe>();
+            this._recipes = new List<IRecipe>();
         }
 
-        public void Add(Recipe recipe)
+        public void Add(IRecipe recipe)
         {
             this._recipes.Add(recipe);
         }
 
-        public void Remove(Recipe recipe)
+        public void Remove(IRecipe recipe)
         {
             this._recipes.Remove(recipe);
         }
 
-        public List<Recipe> Get()
+        public IList<IRecipe> GetAllRecipes()
         {
             return this._recipes;
         }

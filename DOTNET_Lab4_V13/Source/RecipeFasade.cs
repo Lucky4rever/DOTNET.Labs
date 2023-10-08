@@ -1,30 +1,36 @@
-﻿using System;
+﻿using DOTNET_Lab4_V13.Source.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace DOTNET_Lab4_V13.Source
 {
-    class RecipeFasade
+    class RecipeFasade : IRecipeFasade
     {
-        private RecipeStorage _recipes = new RecipeStorage();
+        private readonly IRecipeStorage _recipes;
 
-        public void AddRecipe(Recipe recipe)
+        public RecipeFasade()
+        {
+            this._recipes = new RecipeStorage();
+        }
+
+        public void AddRecipe(IRecipe recipe)
         {
             this._recipes.Add(recipe);
         }
 
-        public void RemoveRecipe(Recipe recipe)
+        public void RemoveRecipe(IRecipe recipe)
         {
             this._recipes.Remove(recipe);
         }
 
-        public List<Recipe> GetRecipes()
+        public IList<IRecipe> GetRecipes()
         {
-            return this._recipes.Get();
+            return this._recipes.GetAllRecipes();
         }
 
         public void CheckDate()
         {
-            List<Recipe> recipesCopy = new List<Recipe>(this._recipes.Get());
+            List<IRecipe> recipesCopy = new List<IRecipe>(this._recipes.GetAllRecipes());
 
             recipesCopy.ForEach(recipe =>
             {
@@ -35,16 +41,19 @@ namespace DOTNET_Lab4_V13.Source
             });
         }
 
-        public void IncreaseEndDate(Recipe recipe, double days)
+        public void IncreaseEndDate(IRecipe recipe, double days)
         {
-            this.GetRecipes()
-                .Find(_recipe => _recipe == recipe)
+            List<IRecipe> recipes = (List<IRecipe>)GetRecipes();
+
+            recipes.Find(_recipe => _recipe == recipe)
                 .IncreaseEndDate(days);
         }
 
-        public Recipe GetPatientRecipe(Patient patient)
+        public IRecipe GetPatientRecipe(IPerson patient)
         {
-            return this.GetRecipes().Find(recipe => recipe.Patient == patient);
+            List<IRecipe> recipes = (List<IRecipe>)GetRecipes();
+
+            return recipes.Find(recipe => recipe.Patient == patient);
         }
     }
 }

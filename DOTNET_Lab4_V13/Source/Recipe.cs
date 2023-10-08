@@ -1,13 +1,14 @@
-﻿using System;
+﻿using DOTNET_Lab4_V13.Source.Interfaces;
+using System;
 using System.Text;
 
 namespace DOTNET_Lab4_V13.Source
 {
-    class Recipe
+    class Recipe : IRecipe
     {
         public string Description { get; set; }
-        public Doctor Doctor { get; set; }
-        public Patient Patient { get; set; }
+        public IDoctor Doctor { get; set; }
+        public IPerson Patient { get; set; }
         public DateTime EndDate { get; set; }
 
         public void IncreaseEndDate(double days)

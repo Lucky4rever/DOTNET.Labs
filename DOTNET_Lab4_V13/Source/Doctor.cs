@@ -1,9 +1,12 @@
-﻿namespace DOTNET_Lab4_V13.Source
+﻿using DOTNET_Lab4_V13.Source.Interfaces;
+using DOTNET_Lab4_V13.Source.Resourses;
+
+namespace DOTNET_Lab4_V13.Source
 {
-    class Doctor
+    class Doctor : IDoctor
     {
-        public string Name { get; private set; }
-        public DoctorPosition Position { get; private set; }
+        public string Name { get; }
+        public DoctorPosition Position { get; }
 
         public Doctor(string name, DoctorPosition position)
         {
