@@ -1,12 +1,12 @@
-﻿using DOTNET_Lab3_V13.Source.Materials;
+﻿using DOTNET_Lab3_V13.Source.Interfaces;
 
 namespace DOTNET_Lab3_V13.Source
 {
-    class SupplierListItem : RequiredItem
+    class SupplierListItem : RequiredItem, ISupplierListItem
     {
         public decimal PriceForSet { get; set; }
 
-        public SupplierListItem(Material material, int count, decimal price) 
+        public SupplierListItem(IMaterial material, int count, decimal price) 
             : base(material, count)
         {
             this.PriceForSet = price;

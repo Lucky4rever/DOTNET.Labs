@@ -1,4 +1,4 @@
-﻿namespace DOTNET_Lab3_V13.Source.Materials
+﻿namespace DOTNET_Lab3_V13.Source.Resources
 {
     public enum BrickType
     {

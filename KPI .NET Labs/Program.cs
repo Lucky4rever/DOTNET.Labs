@@ -6,7 +6,7 @@ using System;
 namespace DOTNET_Labs
 {
     class Program {
-        private static void Main() {
+        static void Main() {
             Lab3 lab3 = Lab3.GetInstance();
             lab3.Var13_Lab3();
 

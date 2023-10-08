@@ -1,6 +1,8 @@
-﻿namespace DOTNET_Lab3_V13.Source.Materials
+﻿using DOTNET_Lab3_V13.Source.Interfaces;
+
+namespace DOTNET_Lab3_V13.Source.Materials
 {
-    abstract class Material
+    abstract class Material : IMaterial
     {
         protected int Count { get; set; }
 

@@ -43,11 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Source\Interfaces\IConstruction.cs" />
+    <Compile Include="Source\Interfaces\IMaterial.cs" />
     <Compile Include="Source\Construction.cs" />
-    <Compile Include="Source\IMaterialFabric.cs" />
+    <Compile Include="Source\Interfaces\IMaterialFabric.cs" />
+    <Compile Include="Source\Interfaces\IRequiredItem.cs" />
+    <Compile Include="Source\Interfaces\ISupplier.cs" />
+    <Compile Include="Source\Interfaces\ISupplierListItem.cs" />
+    <Compile Include="Source\Interfaces\ISuppliersList.cs" />
     <Compile Include="Source\MaterialFabric.cs" />
     <Compile Include="Source\Materials\Brick.cs" />
-    <Compile Include="Source\Materials\BrickType.cs" />
+    <Compile Include="Source\Resources\BrickType.cs" />
     <Compile Include="Source\Materials\Concrete.cs" />
     <Compile Include="Source\Materials\Material.cs" />
     <Compile Include="Source\Materials\ReinforcedConcreteSlabs.cs" />

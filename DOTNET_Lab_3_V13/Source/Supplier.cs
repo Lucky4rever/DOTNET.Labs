@@ -1,29 +1,30 @@
-﻿using System.Collections.Generic;
+﻿using DOTNET_Lab3_V13.Source.Interfaces;
+using System.Collections.Generic;
 
 namespace DOTNET_Lab3_V13.Source
 {
-    class Supplier
+    class Supplier : ISupplier
     {
         private readonly string Name;
-        private List<SupplierListItem> _itemList;
+        private List<ISupplierListItem> _itemList;
 
         public Supplier(string name)
         {
             this.Name = name;
-            this._itemList = new List<SupplierListItem>();
+            this._itemList = new List<ISupplierListItem>();
         }
 
-        public void SetItemList(List<SupplierListItem> list)
+        public void SetItemList(List<ISupplierListItem> list)
         {
             this._itemList = list;
         }
 
-        public void AddItemToList(SupplierListItem item)
+        public void AddItemToList(ISupplierListItem item)
         {
             this._itemList.Add(item);
         }
 
-        public List<SupplierListItem> GetItemList()
+        public List<ISupplierListItem> GetItemList()
         {
             return this._itemList;
         }

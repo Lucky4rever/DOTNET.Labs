@@ -1,13 +1,13 @@
-﻿using DOTNET_Lab3_V13.Source.Materials;
+﻿using DOTNET_Lab3_V13.Source.Interfaces;
 
 namespace DOTNET_Lab3_V13.Source
 {
-    class RequiredItem
+    class RequiredItem : IRequiredItem
     {
-        public Material Material { get; set; }
+        public IMaterial Material { get; set; }
         public int MaxCount { get; set; }
 
-        public RequiredItem(Material material, int count)
+        public RequiredItem(IMaterial material, int count)
         {
             this.Material = material;
             this.MaxCount = count;

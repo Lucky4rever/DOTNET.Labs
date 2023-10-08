@@ -1,4 +1,6 @@
-﻿namespace DOTNET_Lab3_V13.Source.Materials
+﻿using DOTNET_Lab3_V13.Source.Resources;
+
+namespace DOTNET_Lab3_V13.Source.Materials
 {
     class Brick : Material
     {

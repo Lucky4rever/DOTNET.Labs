@@ -1,12 +1,13 @@
 ﻿using DOTNET_Lab3_V13.Source;
-using DOTNET_Lab3_V13.Source.Materials;
+using DOTNET_Lab3_V13.Source.Interfaces;
+using DOTNET_Lab3_V13.Source.Resources;
 using System;
 
 namespace DOTNET_Lab3_V13
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("Variant 13\nLab 3\n");
 
@@ -19,11 +20,11 @@ namespace DOTNET_Lab3_V13
         {
             MaterialFabric fabric = new MaterialFabric();
 
-            Material brick1 = fabric.CreateBrick(BrickType.Ceramic, 100);
-            Material brick2 = fabric.CreateBrick(BrickType.Clinker, 100);
-            Material brick3 = fabric.CreateBrick(BrickType.Silicate, 100);
-            Material concrete = fabric.CreateConcrete(1);
-            Material slabs = fabric.CreateReinforcedConcreteSlabs(10, 10, 3);
+            IMaterial brick1 = fabric.CreateBrick(BrickType.Ceramic, 100);
+            IMaterial brick2 = fabric.CreateBrick(BrickType.Clinker, 100);
+            IMaterial brick3 = fabric.CreateBrick(BrickType.Silicate, 100);
+            IMaterial concrete = fabric.CreateConcrete(1);
+            IMaterial slabs = fabric.CreateReinforcedConcreteSlabs(10, 10, 3);
 
 
             Supplier supplier1 = new Supplier("Grand Supplier");
@@ -53,7 +54,7 @@ namespace DOTNET_Lab3_V13
             {
                 Console.WriteLine(item);
 
-                Supplier bestSupplier = suppliersList.FindSupplier(item.Material, item.MaxCount, item.PriceForSet);
+                Supplier bestSupplier = (Supplier)suppliersList.FindSupplier(item.Material, item.MaxCount, item.PriceForSet);
 
                 Console.WriteLine(bestSupplier);
             }
