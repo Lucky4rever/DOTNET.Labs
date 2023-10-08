@@ -1,6 +1,6 @@
 ﻿namespace DOTNET_Lab5_V13.Source.Status
 {
-    class Submitted : TaskStatusAbstraction
+    class Submitted : TaskStatus
     {
         public override string ToString()
         {

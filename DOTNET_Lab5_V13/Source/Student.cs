@@ -1,23 +1,24 @@
-﻿using System.Text;
+﻿using DOTNET_Lab5_V13.Source.Interfaces;
+using System.Text;
 
 namespace DOTNET_Lab5_V13.Source
 {
-    class Student : Person
+    class Student : Person, IStudent
     {
-        private int _asscessment { get; set; }
-        private Task _task { get; set; }
+        private int _asscessment;
+        private ITask _task;
 
         public Student(string name) : base(name)
         {
             this._asscessment = 0;
         }
 
-        public Task GetTask()
+        public ITask GetTask()
         {
             return this._task;
         }
 
-        public void SetTask(Task task)
+        public void SetTask(ITask task)
         {
             this._task = task.Copy();
         }
@@ -32,7 +33,7 @@ namespace DOTNET_Lab5_V13.Source
             return this._asscessment;
         }
 
-        public void SetAssessment(int assessment)
+        public void IncreaseAssessment(int assessment)
         {
             this._asscessment += assessment;
         }

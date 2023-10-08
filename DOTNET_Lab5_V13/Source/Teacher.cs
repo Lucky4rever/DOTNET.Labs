@@ -1,23 +1,24 @@
-﻿using DOTNET_Lab5_V13.Source.Status;
+﻿using DOTNET_Lab5_V13.Source.Interfaces;
+using DOTNET_Lab5_V13.Source.Status;
 using System.Collections.Generic;
 
 namespace DOTNET_Lab5_V13.Source
 {
-    class Teacher : Person
+    class Teacher : Person, ITeacher
     {
-        private List<Student> Students { get; set; }
+        private IList<IStudent> Students { get; set; }
 
         public Teacher(string name) : base(name)
         {
-            this.Students = new List<Student>();
+            this.Students = new List<IStudent>();
         }
 
-        public void AddStudent(Student student)
+        public void AddStudent(IStudent student)
         {
             this.Students.Add(student);
         }
 
-        public void RemoveStudent(Student student)
+        public void RemoveStudent(IStudent student)
         {
             this.Students.Remove(student);
         }
@@ -26,7 +27,7 @@ namespace DOTNET_Lab5_V13.Source
         {
             foreach (Student student in this.Students)
             {
-                Task task = student.GetTask();
+                Task task = (Task)student.GetTask();
                 var solution = task.GetSolution();
 
                 task.SetStatus(new Submitted());
@@ -40,7 +41,7 @@ namespace DOTNET_Lab5_V13.Source
                 if (solution == answer)
                 {
                     task.SetStatus(new Checked());
-                    student.SetAssessment(assessment);
+                    student.IncreaseAssessment(assessment);
                     continue;
                 }
 
@@ -48,7 +49,7 @@ namespace DOTNET_Lab5_V13.Source
             }
         }
 
-        public void SetTaskForStudents(Task task)
+        public void SetTaskForStudents(ITask task)
         {
             foreach (Student student in this.Students)
             {

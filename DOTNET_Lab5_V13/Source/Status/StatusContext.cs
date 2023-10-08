@@ -1,21 +1,23 @@
-﻿namespace DOTNET_Lab5_V13.Source.Status
-{
-    class StatusContext
-    {
-        private TaskStatusAbstraction _status = null;
+﻿using DOTNET_Lab5_V13.Source.Interfaces;
 
-        public StatusContext(TaskStatusAbstraction status)
+namespace DOTNET_Lab5_V13.Source.Status
+{
+    class StatusContext : IStatusContext
+    {
+        private ITaskStatus _status = null;
+
+        public StatusContext(ITaskStatus status)
         {
             this._status = status;
         }
 
-        public void TransitionTo(TaskStatusAbstraction status)
+        public void TransitionTo(ITaskStatus status)
         {
             this._status = status;
             this._status.SetContext(this);
         }
 
-        public TaskStatusAbstraction GetStatus()
+        public ITaskStatus GetStatus()
         {
             return this._status;
         }

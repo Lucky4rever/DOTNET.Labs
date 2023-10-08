@@ -1,25 +1,26 @@
-﻿using DOTNET_Lab5_V13.Source.Status;
+﻿using DOTNET_Lab5_V13.Source.Interfaces;
+using DOTNET_Lab5_V13.Source.Status;
 using System.Text;
 
 namespace DOTNET_Lab5_V13.Source
 {
-    class Task
+    class Task : ITask
     {
-        public readonly string Description;
+        private readonly string _description;
+        private readonly StatusContext _status;
         private string _solution;
-        private StatusContext _status;
 
         public Task(string description)
         {
             StatusFactory factory = new StatusFactory();
 
-            this.Description = description;
+            this._description = description;
             this._status = new StatusContext(factory.Issued());
         }
 
-        public Task Copy()
+        public ITask Copy()
         {
-            Task clone = new Task(this.Description);
+            Task clone = new Task(this._description);
 
             clone.SetSolution(this._solution);
             clone.SetStatus(this._status.GetStatus());
@@ -33,17 +34,22 @@ namespace DOTNET_Lab5_V13.Source
             this._status.TransitionTo(new Completed());
         }
 
+        public string GetDescription()
+        {
+            return this._description;
+        }
+
         public string GetSolution()
         {
             return this._solution;
         }
 
-        public void SetStatus(TaskStatusAbstraction status)
+        public void SetStatus(ITaskStatus status)
         {
             this._status.TransitionTo(status);
         }
 
-        public TaskStatusAbstraction GetStatus()
+        public ITaskStatus GetStatus()
         {
             return this._status.GetStatus();
         }
@@ -52,7 +58,7 @@ namespace DOTNET_Lab5_V13.Source
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.AppendLine($"{this.Description}");
+            builder.AppendLine($"{this._description}");
             builder.AppendLine($"Solution: {this._solution ?? "none"}");
             builder.AppendLine($"Status: {this._status}");
 

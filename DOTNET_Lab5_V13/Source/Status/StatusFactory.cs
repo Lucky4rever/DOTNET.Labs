@@ -1,33 +1,35 @@
-﻿namespace DOTNET_Lab5_V13.Source.Status
+﻿using DOTNET_Lab5_V13.Source.Interfaces;
+
+namespace DOTNET_Lab5_V13.Source.Status
 {
-    class StatusFactory
+    class StatusFactory : IStatusFactory
     {
-        public TaskStatusAbstraction Issued()
+        public ITaskStatus Issued()
         {
             return new Issued();
         }
 
-        public TaskStatusAbstraction Completed()
+        public ITaskStatus Completed()
         {
             return new Completed();
         }
 
-        public TaskStatusAbstraction Incompleted()
+        public ITaskStatus Incompleted()
         {
             return new Incompleted();
         }
 
-        public TaskStatusAbstraction Checked()
+        public ITaskStatus Checked()
         {
             return new Checked();
         }
 
-        public TaskStatusAbstraction NeedToResubmit()
+        public ITaskStatus NeedToResubmit()
         {
             return new NeedToResubmit();
         }
 
-        public TaskStatusAbstraction Submitted()
+        public ITaskStatus Submitted()
         {
             return new Submitted();
         }

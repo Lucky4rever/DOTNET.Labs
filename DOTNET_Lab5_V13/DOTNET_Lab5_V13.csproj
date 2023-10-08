@@ -43,6 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Source\Interfaces\IPerson.cs" />
+    <Compile Include="Source\Interfaces\IStatusContext.cs" />
+    <Compile Include="Source\Interfaces\IStatusFactory.cs" />
+    <Compile Include="Source\Interfaces\IStudent.cs" />
+    <Compile Include="Source\Interfaces\ITask.cs" />
+    <Compile Include="Source\Interfaces\ITaskStatus.cs" />
+    <Compile Include="Source\Interfaces\ITeacher.cs" />
     <Compile Include="Source\Person.cs" />
     <Compile Include="Source\Status\Checked.cs" />
     <Compile Include="Source\Status\Completed.cs" />
@@ -52,7 +59,7 @@
     <Compile Include="Source\Status\StatusContext.cs" />
     <Compile Include="Source\Status\StatusFactory.cs" />
     <Compile Include="Source\Status\Submitted.cs" />
-    <Compile Include="Source\Status\TaskStatusAbstraction.cs" />
+    <Compile Include="Source\Status\TaskStatus.cs" />
     <Compile Include="Source\Student.cs" />
     <Compile Include="Source\Task.cs" />
     <Compile Include="Source\Teacher.cs" />

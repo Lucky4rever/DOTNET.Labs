@@ -1,6 +1,6 @@
 ﻿namespace DOTNET_Lab5_V13.Source.Status
 {
-    class Completed : TaskStatusAbstraction
+    class Completed : TaskStatus
     {
         public override string ToString()
         {
