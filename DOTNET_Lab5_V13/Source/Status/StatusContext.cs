@@ -9,6 +9,7 @@ namespace DOTNET_Lab5_V13.Source.Status
         public StatusContext(ITaskStatus status)
         {
             this._status = status;
+            this._status.SetContext(this);
         }
 
         public void TransitionTo(ITaskStatus status)

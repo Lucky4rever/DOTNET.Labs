@@ -15,7 +15,7 @@ namespace DOTNET_Lab5_V13.Source
             StatusFactory factory = new StatusFactory();
 
             this._description = description;
-            this._status = new StatusContext(factory.Issued());
+            this._status = new StatusContext(new Issued());
         }
 
         public ITask Copy()
@@ -23,7 +23,6 @@ namespace DOTNET_Lab5_V13.Source
             Task clone = new Task(this._description);
 
             clone.SetSolution(this._solution);
-            clone.SetStatus(this._status.GetStatus());
 
             return clone;
         }
@@ -31,7 +30,7 @@ namespace DOTNET_Lab5_V13.Source
         public void SetSolution(string solution)
         {
             this._solution = solution;
-            this._status.TransitionTo(new Completed());
+            this._status.GetStatus();
         }
 
         public string GetDescription()
@@ -46,7 +45,7 @@ namespace DOTNET_Lab5_V13.Source
 
         public void SetStatus(ITaskStatus status)
         {
-            this._status.TransitionTo(status);
+            this._status.GetStatus().ChangeStatus(status);
         }
 
         public ITaskStatus GetStatus()

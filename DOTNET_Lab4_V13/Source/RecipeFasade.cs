@@ -1,4 +1,5 @@
-﻿using DOTNET_Lab4_V13.Source.Interfaces;
+﻿using DOTNET_Lab4_V13.Exceptions;
+using DOTNET_Lab4_V13.Source.Interfaces;
 using System;
 using System.Collections.Generic;
 
@@ -30,7 +31,12 @@ namespace DOTNET_Lab4_V13.Source
 
         public void CheckDate()
         {
-            List<IRecipe> recipesCopy = new List<IRecipe>(this._recipes.GetAllRecipes());
+            List<IRecipe> recipesCopy = new List<IRecipe>(GetRecipes());
+
+            if (recipesCopy.Count == 0)
+            {
+                throw new EmptyListException();
+            }
 
             recipesCopy.ForEach(recipe =>
             {
@@ -44,6 +50,11 @@ namespace DOTNET_Lab4_V13.Source
         public void IncreaseEndDate(IRecipe recipe, double days)
         {
             List<IRecipe> recipes = (List<IRecipe>)GetRecipes();
+
+            if (recipes.Count == 0)
+            {
+                throw new EmptyListException();
+            }
 
             recipes.Find(_recipe => _recipe == recipe)
                 .IncreaseEndDate(days);

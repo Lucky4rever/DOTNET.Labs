@@ -5,8 +5,8 @@ namespace DOTNET_Lab3_V13.Source
 {
     class Construction : IConstruction
     {
-        private readonly List<IRequiredItem> _requiredItems;
-        private readonly List<ISupplierListItem> _procurementItems;
+        private readonly IList<IRequiredItem> _requiredItems;
+        private readonly IList<ISupplierListItem> _procurementItems;
 
         public Construction()
         {

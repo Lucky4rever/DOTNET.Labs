@@ -3,6 +3,7 @@
     interface ITaskStatus
     {
         void SetContext(IStatusContext context);
+        void ChangeStatus(ITaskStatus status);
         string ToString();
     }
 }

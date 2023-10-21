@@ -15,5 +15,10 @@ namespace DOTNET_Lab5_V13.Source.Status
         {
             return this._context.ToString();
         }
+
+        public virtual void ChangeStatus(ITaskStatus status)
+        {
+            this._context.TransitionTo(status);
+        }
     }
 }
