@@ -1,4 +1,5 @@
-﻿using DOTNET_Lab5_V13.Source.Interfaces;
+﻿using DOTNET_Lab5_V13.Exceptions;
+using DOTNET_Lab5_V13.Source.Interfaces;
 using DOTNET_Lab5_V13.Source.Status;
 using System.Collections.Generic;
 
@@ -6,7 +7,7 @@ namespace DOTNET_Lab5_V13.Source
 {
     class Teacher : Person, ITeacher
     {
-        private IList<IStudent> Students { get; set; }
+        public List<IStudent> Students { get; private set; }
 
         public Teacher(string name) : base(name)
         {
@@ -23,38 +24,17 @@ namespace DOTNET_Lab5_V13.Source
             this.Students.Remove(student);
         }
 
-        public void CheckStudentWorks(string answer, int assessment)
+        public void SetStudentAssessment(IStudent student, int assessment)
         {
-            foreach (Student student in this.Students)
+            Task task = (Task)student.GetTask();
+
+            if (task == null)
             {
-                Task task = (Task)student.GetTask();
-                var solution = task.GetSolution();
-
-                task.SetStatus(new Submitted());
-
-                if (solution == null)
-                {
-                    task.SetStatus(new Incompleted());
-                    continue;
-                }
-
-                if (solution == answer)
-                {
-                    task.SetStatus(new Checked());
-                    student.IncreaseAssessment(assessment);
-                    continue;
-                }
-
-                task.SetStatus(new NeedToResubmit());
+                throw new NoTaskException();
             }
-        }
 
-        public void SetTaskForStudents(ITask task)
-        {
-            foreach (Student student in this.Students)
-            {
-                student.SetTask(task);
-            }
+            student.IncreaseAssessment(assessment);
+            task.SetStatus(new Checked());
         }
     }
 }

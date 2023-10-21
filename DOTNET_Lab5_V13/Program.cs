@@ -1,6 +1,9 @@
-﻿using DOTNET_Lab5_V13.Source;
+﻿using DOTNET_Lab5_V13.Services;
+using DOTNET_Lab5_V13.Source;
+using DOTNET_Lab5_V13.Source.Interfaces;
 using DOTNET_Lab5_V13.Source.Status;
 using System;
+using System.Collections.Generic;
 
 namespace DOTNET_Lab5_V13
 {
@@ -18,9 +21,7 @@ namespace DOTNET_Lab5_V13
 
         static void Var13_Lab5()
         {
-            StatusContext context = new StatusContext(new Issued());
-
-            context.TransitionTo(new Checked());
+            TaskOperations taskOperations = new TaskOperations();
 
             Teacher teacher = new Teacher("Eugenii Vovk");
 
@@ -32,16 +33,24 @@ namespace DOTNET_Lab5_V13
             teacher.AddStudent(student2);
             teacher.AddStudent(student3);
 
-            teacher.SetTaskForStudents(new Task("2+2=?"));
+            taskOperations.SetTaskForStudents(teacher.Students, new Task("2+2=?"));
+
+            Console.WriteLine("Checking solutions and setting work status\n");
 
             student1.SetTaskSolution("4");
             student2.SetTaskSolution("5");
 
-            teacher.CheckStudentWorks("4", 10);
+            taskOperations.CheckStudentWorks(teacher.Students, "4");
 
             Console.WriteLine(student1);
             Console.WriteLine(student2);
             Console.WriteLine(student3);
+
+            Console.WriteLine("Setting assessment\n");
+
+            teacher.SetStudentAssessment(student1, 12);
+
+            Console.WriteLine(student1);
         }
     }
 }

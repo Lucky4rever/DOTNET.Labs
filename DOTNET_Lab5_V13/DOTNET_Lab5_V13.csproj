@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\NoTaskException.cs" />
     <Compile Include="Exceptions\WrongStatusException.cs" />
     <Compile Include="Source\Interfaces\IPerson.cs" />
     <Compile Include="Source\Interfaces\IStatusContext.cs" />
@@ -69,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Compile Include="Services\TaskOperations.service.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

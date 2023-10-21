@@ -15,13 +15,13 @@ namespace DOTNET_Lab5_V13.Source.Status
         {
             Type statusType = status.GetType();
 
-            if (statusType == typeof(Checked) || statusType == typeof(Incompleted) || statusType == typeof(NeedToResubmit))
+            if (statusType == typeof(Completed) || statusType == typeof(Incompleted) || statusType == typeof(NeedToResubmit))
             {
                 this._context.TransitionTo(status);
             }
             else
             {
-                throw new WrongStatusException(nameof(status));
+                throw new WrongStatusException(status.ToString());
             }
         }
     }

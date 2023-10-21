@@ -21,7 +21,7 @@ namespace DOTNET_Lab5_V13.Source.Status
             }
             else
             {
-                throw new WrongStatusException(nameof(status));
+                throw new WrongStatusException(status.ToString());
             }
         }
     }

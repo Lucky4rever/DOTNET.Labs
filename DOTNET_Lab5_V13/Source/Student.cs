@@ -43,6 +43,7 @@ namespace DOTNET_Lab5_V13.Source
             StringBuilder builder = new StringBuilder();
 
             builder.AppendLine($"Student: {this.Name}");
+            builder.AppendLine($"Assessment: {this._asscessment}");
             builder.Append($"Task: {this._task.ToString() ?? "none"}");
 
             return builder.ToString();
