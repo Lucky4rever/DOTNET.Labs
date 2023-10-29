@@ -11,7 +11,6 @@ namespace DOTNET_Lab4_V13.Source
             this.Name = name;
         }
 
-
         public override string ToString()
         {
             return this.Name;

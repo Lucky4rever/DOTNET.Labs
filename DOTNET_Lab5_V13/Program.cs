@@ -3,7 +3,6 @@ using DOTNET_Lab5_V13.Source;
 using DOTNET_Lab5_V13.Source.Interfaces;
 using DOTNET_Lab5_V13.Source.Status;
 using System;
-using System.Collections.Generic;
 
 namespace DOTNET_Lab5_V13
 {
@@ -33,14 +32,14 @@ namespace DOTNET_Lab5_V13
             teacher.AddStudent(student2);
             teacher.AddStudent(student3);
 
-            taskOperations.SetTaskForStudents(teacher.Students, new Task("2+2=?"));
+            taskOperations.SetTaskForStudents(teacher.GetStudents(), new Task("2+2=?"));
 
             Console.WriteLine("Checking solutions and setting work status\n");
 
             student1.SetTaskSolution("4");
             student2.SetTaskSolution("5");
 
-            taskOperations.CheckStudentWorks(teacher.Students, "4");
+            taskOperations.CheckStudentWorks(teacher.GetStudents(), "4");
 
             Console.WriteLine(student1);
             Console.WriteLine(student2);
@@ -51,6 +50,13 @@ namespace DOTNET_Lab5_V13
             teacher.SetStudentAssessment(student1, 12);
 
             Console.WriteLine(student1);
+
+
+
+            StatusFactory factory = new StatusFactory();
+
+            ITaskStatus status = factory.Completed();
+            status.ChangeStatus(factory.Incompleted());
         }
     }
 }

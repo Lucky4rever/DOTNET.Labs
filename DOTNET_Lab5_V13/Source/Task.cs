@@ -15,7 +15,7 @@ namespace DOTNET_Lab5_V13.Source
             StatusFactory factory = new StatusFactory();
 
             this._description = description;
-            this._status = new StatusContext(new Issued());
+            this._status = new StatusContext(factory.Issued());
         }
 
         public ITask Copy()

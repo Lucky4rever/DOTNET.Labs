@@ -7,5 +7,6 @@ namespace DOTNET_Lab4_V13.Source.Interfaces
         void Add(IRecipe recipe);
         void Remove(IRecipe recipe);
         IList<IRecipe> GetAllRecipes();
+        void IncreaseEndDate(IRecipe recipe, double days);
     }
 }

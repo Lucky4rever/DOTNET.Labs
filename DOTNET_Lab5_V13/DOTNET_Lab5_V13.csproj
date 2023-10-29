@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="Exceptions\NoTaskException.cs" />
     <Compile Include="Exceptions\WrongStatusException.cs" />
-    <Compile Include="Source\Interfaces\IPerson.cs" />
     <Compile Include="Source\Interfaces\IStatusContext.cs" />
     <Compile Include="Source\Interfaces\IStatusFactory.cs" />
     <Compile Include="Source\Interfaces\IStudent.cs" />

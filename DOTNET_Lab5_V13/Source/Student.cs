@@ -6,7 +6,7 @@ namespace DOTNET_Lab5_V13.Source
     class Student : Person, IStudent
     {
         private int _asscessment;
-        private ITask _task;
+        private Task _task;
 
         public Student(string name) : base(name)
         {
@@ -20,7 +20,7 @@ namespace DOTNET_Lab5_V13.Source
 
         public void SetTask(ITask task)
         {
-            this._task = task.Copy();
+            this._task = (Task)task.Copy();
         }
 
         public void SetTaskSolution(string solution)
@@ -42,7 +42,7 @@ namespace DOTNET_Lab5_V13.Source
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.AppendLine($"Student: {this.Name}");
+            builder.AppendLine($"Student: {this.GetName()}");
             builder.AppendLine($"Assessment: {this._asscessment}");
             builder.Append($"Task: {this._task.ToString() ?? "none"}");
 

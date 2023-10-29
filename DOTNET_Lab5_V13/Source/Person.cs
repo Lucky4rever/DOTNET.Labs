@@ -2,18 +2,23 @@
 
 namespace DOTNET_Lab5_V13.Source
 {
-    abstract class Person : IPerson
+    abstract class Person
     {
-        public string Name { get; }
+        public string _name;
 
         public Person(string name)
         {
-            this.Name = name;
+            this._name = name;
+        }
+
+        public string GetName()
+        {
+            return this._name;
         }
 
         public override string ToString()
         {
-            return this.Name;
+            return this._name;
         }
     }
 }

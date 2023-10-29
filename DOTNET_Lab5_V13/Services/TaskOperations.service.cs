@@ -10,7 +10,7 @@ namespace DOTNET_Lab5_V13.Services
     class TaskOperations
     {
 
-        public void SetTaskForStudents(List<IStudent> students, ITask task)
+        public void SetTaskForStudents(IList<IStudent> students, ITask task)
         {
             foreach (Student student in students)
             {
@@ -18,7 +18,7 @@ namespace DOTNET_Lab5_V13.Services
             }
         }
 
-        public void CheckStudentWorks(List<IStudent> students, string answer)
+        public void CheckStudentWorks(IList<IStudent> students, string answer)
         {
             foreach (Student student in students)
             {

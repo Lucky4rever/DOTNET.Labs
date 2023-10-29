@@ -1,4 +1,5 @@
-﻿using DOTNET_Lab4_V13.Source.Interfaces;
+﻿using DOTNET_Lab4_V13.Exceptions;
+using DOTNET_Lab4_V13.Source.Interfaces;
 using System.Collections.Generic;
 
 namespace DOTNET_Lab4_V13.Source
@@ -25,6 +26,17 @@ namespace DOTNET_Lab4_V13.Source
         public IList<IRecipe> GetAllRecipes()
         {
             return this._recipes;
+        }
+
+        public void IncreaseEndDate(IRecipe recipe, double days)
+        {
+            if (this._recipes.Count == 0)
+            {
+                throw new EmptyListException();
+            }
+
+            this._recipes.Find(_recipe => _recipe == recipe)
+                .IncreaseEndDate(days);
         }
     }
 }

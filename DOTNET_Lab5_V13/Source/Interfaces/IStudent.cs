@@ -1,6 +1,6 @@
 ﻿namespace DOTNET_Lab5_V13.Source.Interfaces
 {
-    interface IStudent : IPerson
+    interface IStudent
     {
         ITask GetTask();
         void SetTask(ITask task);

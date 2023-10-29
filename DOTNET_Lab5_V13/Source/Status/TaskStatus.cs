@@ -11,14 +11,14 @@ namespace DOTNET_Lab5_V13.Source.Status
             this._context = context;
         }
 
-        public override string ToString()
-        {
-            return this._context.ToString();
-        }
-
         public virtual void ChangeStatus(ITaskStatus status)
         {
             this._context.TransitionTo(status);
+        }
+
+        public override string ToString()
+        {
+            return this._context.ToString();
         }
     }
 }

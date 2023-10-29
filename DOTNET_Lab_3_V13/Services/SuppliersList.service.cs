@@ -39,7 +39,7 @@ namespace DOTNET_Lab3_V13.Services
 
             if (dialedCount < count)
             {
-                throw new Exception("The resource requirement is not fulfilled");
+                throw new NotFullifiedException();
             }
 
             return result;
